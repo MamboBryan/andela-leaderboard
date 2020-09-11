@@ -9,6 +9,6 @@
         android:gravity="center">
         <bitmap
             android:gravity="center"
-            android:src="@drawable/launch" />
+            android:src="@drawable/gads" />
     </item>
 </layer-list>

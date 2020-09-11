@@ -22,7 +22,6 @@ import com.andelaexample.leaderboard.data.models.Learner;
 import com.andelaexample.leaderboard.data.models.SkillLearner;
 import com.andelaexample.leaderboard.databinding.FragmentTemplateBinding;
 import com.andelaexample.leaderboard.utils.ConstantsUtils;
-import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -201,11 +200,11 @@ public class TemplateFragment extends Fragment implements OnRetryListener {
     private void createRetrofitInstance() {
         //create retrofit instance
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(ConstantsUtils.BASE_API_URL)
+                .baseUrl(ConstantsUtils.GADS_BASE_API_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        service = GadsApi.createService(GadsService.class, ConstantsUtils.BASE_API_URL);
+        service = GadsApi.createService(GadsService.class, ConstantsUtils.GADS_BASE_API_URL);
 
     }
 

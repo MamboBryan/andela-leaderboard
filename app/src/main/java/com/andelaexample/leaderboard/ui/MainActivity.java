@@ -1,10 +1,10 @@
 package com.andelaexample.leaderboard.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if (item.getItemId() == R.id.menu_item_submit) {
-            Toast.makeText(this, "Submitted", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, SubmitActivity.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

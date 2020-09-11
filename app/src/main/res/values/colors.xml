@@ -4,4 +4,7 @@
         <color name="primaryLightColor">#34383a</color>
         <color name="primaryDarkColor">#000000</color>
         <color name="primaryTextColor">#ffffff</color>
+
+        <color name="orangeDark">#F49111</color>
+        <color name="orangeLight">#FAC305</color>
 </resources>
