@@ -135,6 +135,7 @@ public class SubmitDialogFragment extends DialogFragment implements OnSubmitClic
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
 
+                showFeedback();
                 showFeedbackMessage(R.drawable.ic_baseline_warning_24, failure);
 
                 new Handler().postDelayed(new Runnable() {
