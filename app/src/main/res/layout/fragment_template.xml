@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="isLoadingVisible"
+            type="boolean" />
+        <variable
+            name="isDataVisible"
+            type="boolean" />
+
+        <variable
+            name="isFeedBackVisible"
+            type="boolean" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.TemplateFragment">
+
+        <include
+            android:id="@+id/include_loading"
+            layout="@layout/layout_template_loading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="@{isLoadingVisible ? View.VISIBLE:View.GONE}"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/include_recycler"
+            layout="@layout/layout_template_recycler"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="@{isDataVisible ? View.VISIBLE:View.GONE}"
+
+            app:layout_constraintTop_toBottomOf="@+id/include_loading" />
+
+        <include
+            android:id="@+id/include_feedback"
+            layout="@layout/layout_template_feedback"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="@{isFeedBackVisible ? View.VISIBLE:View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include_recycler" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
